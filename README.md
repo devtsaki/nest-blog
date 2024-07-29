@@ -35,7 +35,7 @@ $ yarn install
 ## Running the app
 
 ```bash
-# start postgres container
+# start postgresql container
 $ docker compose up
 
 # seed the database
@@ -46,6 +46,9 @@ $ yarn run start
 
 # watch mode
 $ yarn run start:dev
+
+# start prisma studio
+$ npx prisma studio 
 
 # production mode
 $ yarn run start:prod
