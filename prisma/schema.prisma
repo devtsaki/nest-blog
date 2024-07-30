@@ -23,6 +23,7 @@ model Post {
   updatedAt   DateTime @updatedAt
   author      User?    @relation(fields: [authorId], references: [id])
   authorId    Int?
+  tags        Tag[]
 }
 
 model User {
@@ -32,5 +33,11 @@ model User {
   password  String
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
-  articles  Post[]
+  posts     Post[]
+}
+
+model Tag {
+  id    Int    @id @default(autoincrement())
+  name  String
+  posts Post[]
 }

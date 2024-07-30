@@ -29,8 +29,8 @@ export class PostsController {
   @Get()
   @ApiOkResponse({ type: PostEntity, isArray: true })
   async findAll() {
-    const articles = await this.postsService.findAll();
-    return articles.map((article) => new PostEntity(article));
+    const posts = await this.postsService.findAll();
+    return posts.map((post) => new PostEntity(post));
   }
 
   @Get('drafts')

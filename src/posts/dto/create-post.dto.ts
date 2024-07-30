@@ -6,6 +6,7 @@ import {
   IsString,
   MaxLength,
   MinLength,
+  IsInt,
 } from 'class-validator';
 
 export class CreatePostDto {
@@ -30,4 +31,12 @@ export class CreatePostDto {
   @IsOptional()
   @ApiProperty({ required: false, default: false })
   published?: boolean = false;
+
+  @IsInt()
+  @ApiProperty({ required: false })
+  authorId: number;
+
+  @IsInt({ each: true })
+  @ApiProperty({ type: [Number], required: false })
+  tagIds?: number[];
 }

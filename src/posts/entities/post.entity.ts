@@ -30,6 +30,9 @@ export class PostEntity implements Post {
   @ApiProperty({ required: false, type: UserEntity })
   author?: UserEntity;
 
+  @ApiProperty({ type: [Number], required: false })
+  tagIds?: number[];
+
   constructor({ author, ...data }: Partial<PostEntity>) {
     Object.assign(this, data);
 
